@@ -10,3 +10,4 @@ year = gets.chomp
 puts "How much does it cost?"
 cost = gets.chomp
 puts "#{year}, #{make}, #{model}, #{color}, $#{cost}"
+ 
