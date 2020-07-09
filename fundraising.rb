@@ -1,5 +1,3 @@
-puts "Project ABC has $1000 in funding."
-
 def projects
     project = #{name, funds raised}
 end
@@ -8,6 +6,7 @@ def time
     current_time = Time.new
     formatted_time = current_time.strftime("%A %m/%d%Y at %I:%M%p")
 end
+
 
 puts "Projects began on #{formatted_time}"
  
