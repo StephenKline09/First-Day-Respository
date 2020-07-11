@@ -7,6 +7,18 @@ def time
     time.strftime("%A %m /%d /%y at %I:%M%p")
 end
 
+def info(make, model, year, initial_cost, tradein_price)
+    puts "Enter Make"
+    make=gets.chomp
+    puts "Enter Model"
+    model=gets.chomp
+    puts "Enter Year"
+    year=gets.chomp
+    puts "Enter Initial Cost"
+    initial_cost=gets.chomp
+end
+
+puts info
 
 puts "Car Inventory"
 car("jeep", "cherokee", "2018", 35000)
