@@ -1,11 +1,22 @@
 class Player
+    attr_reader :health
+    attr_accessor :name
+
+    def name=(new_name)
+        @name = new_name.capitalize
+    end
+
+    def score
+        @health + @name.length
+    end
+
     def initialize(name, health=100)
         @name = name.capitalize
         @health = health
     end
 
     def to_s
-        "I'm #{@name} with a health of #{@health}."
+        "#{@name} with a health of #{@health} and a score of #{score}."
     end
 
     def blam
@@ -20,13 +31,29 @@ class Player
 end
 
 player1 = Player.new("moe")
-puts player1
-
 player2 = Player.new("larry", 60)
-puts player2
-
 player3 = Player.new("curly", 125)
-puts player3
 
-player1.blam
-puts player1
+players = [player1, player2, player3]
+puts "There are #{players.size} players in the game:"
+
+players.each do |player|
+    puts player
+end
+
+players.each do |player|
+    puts player.health
+end
+
+players.each do |player|
+    player.blam
+    player.blam
+    player.w00t
+    puts player
+end
+
+players.pop
+player4 = Player.new("Shemp", 90)
+players.push(player4)
+
+puts players
