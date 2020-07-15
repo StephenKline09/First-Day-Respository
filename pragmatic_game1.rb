@@ -52,7 +52,6 @@ players.each do |player|
     puts player
 end
 
-players.pop
 player4 = Player.new("Shemp", 90)
 players.push(player4)
 

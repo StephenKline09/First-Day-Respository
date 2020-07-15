@@ -19,7 +19,8 @@ class Project
         puts "#{@name} lost $100 in funding.."
     end
 end
+   
+projects = ["hydroponics", "freakonomics", "outliers"]
 
-project1 = Project.new("ABC")
-puts project1
-    
+puts projects.join(" and ")
+
