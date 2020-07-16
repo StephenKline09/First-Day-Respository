@@ -1,7 +1,7 @@
-class Player
+class Players
     attr_reader :health
     attr_accessor :name
-
+ 
     def name=(new_name)
         @name = new_name.capitalize
     end
@@ -29,30 +29,39 @@ class Player
         puts "#{@name} got w00ted!"
     end
 end
+class Game
+    attr_reader :title
 
-player1 = Player.new("moe")
-player2 = Player.new("larry", 60)
-player3 = Player.new("curly", 125)
-
-players = [player1, player2, player3]
-puts "There are #{players.size} players in the game:"
-
-players.each do |player|
-    puts player
+    def initialize(title)
+        @title = title
+        @players = []
+    end
+    def add_players(a_player)
+        @players.push(a_player)
+    end
+    def play
+        puts "There are #{players.size} players in #{@title}:"
+        @players.each do |players|
+            puts players
+        end
+    @players.each do |players|
+        players.blam
+        players.w00t
+        puts players
+    end
 end
 
-players.each do |player|
-    puts player.health
+
+players1 = Players.new("moe")
+players2 = Players.new("larry", 60)
+players3 = Players.new("curly", 125)
+
+players = [players1, players2, players3]
+
+knuckleheads = Game.new("Knuckleheads")
+knuckleheads.add_players(players1)
+knuckleheads.add_players(players2)
+knuckleheads.add_players(players3)
+knuckleheads.play
+
 end
-
-players.each do |player|
-    player.blam
-    player.blam
-    player.w00t
-    puts player
-end
-
-player4 = Player.new("Shemp", 90)
-players.push(player4)
-
-puts players
