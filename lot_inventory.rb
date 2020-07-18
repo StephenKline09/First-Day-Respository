@@ -7,6 +7,7 @@ class NewCarForm
         @car.model = ask_question("model").capitalize
         @car.year = ask_question("year")
         @car.price = ask_question("price")
+        @car.color = ask_question("color")
     end
 
     def ask_question(value)
@@ -16,13 +17,13 @@ class NewCarForm
 end
 
 class Car
-    attr_accessor :make, :model, :year, :price, :customer
+    attr_accessor :make, :model, :year, :price, :customer, :style, :color
     def initialize
     end
 
     def to_s
         puts ""
-        "#{@customer}'s #{@year}, #{@make}, #{@model} is estimated at $#{@price}"
+        "#{@customer}'s #{@color} #{@year} #{@make}, #{@model} is estimated at $#{@price}"
     end
 end
 
@@ -41,8 +42,11 @@ class Car_Inv
         count += 1
         end
     end
-    def lot_search(value)
-        @inventory.car[0]
+    def list_search
+        puts "What color car are you looking for?"
+        color = gets.chomp
+        @inventory.include
+        gets.chomp
     end
 end
 
